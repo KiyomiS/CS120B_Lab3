@@ -20,61 +20,92 @@ int main(void) {
 	unsigned char count = 0x00;
 	unsigned char tmp = 0x00;
 	while (1) {
+		
+		count = 0;
+
 		tmp = PINA & 0x01;
 		if (tmp == 0x01){
 			count = count + 1;
 		}
+
 		tmp = PINA & 0x02;
 		if (tmp == 0x02){
 			count = count + 1;
 		}
+
 		tmp = PINA & 0x04;		
                 if (tmp == 0x04){
                         count = count + 1;
                 }
+
 		tmp = PINA & 0x08;
                 if (tmp == 0x08){
                         count = count + 1;
                 }
+
 		tmp = PINA & 0x10;
                 if (tmp == 0x10){
                         count = count + 1;
                 }
+
 		tmp = PINA & 0x20;
                 if (tmp== 0x20){
                         count = count + 1;
                 }
+
 		tmp = PINA & 0x40;
                 if (tmp == 0x40){
                         count = count + 1;
                 }
+
 		tmp = PINA & 0x80;
                 if (tmp == 0x80){
                         count = count + 1;
                 }
-                if ((PINB & 0x01) == 0x01){
+
+                tmp = PINB  & 0x01;
+		if (tmp == 0x01){
                         count = count + 1;
                 }
-                if ((PINB & 0x02) == 0x02){
+
+		tmp = PINB & 0x02;
+                if (tmp == 0x02){
                         count = count + 1;
                 }
-                if ((PINB & 0x04) == 0x04){
+
+		tmp = PINB & 0x04;
+                if (tmp == 0x04){
                         count = count + 1;
                 }
-                if ((PINB & 0x08) == 0x08){                                                                                                                                                                                                                          count = count + 1;                                                                                                                                                                                                                   }
-                if ((PINB & 0x10) == 0x10){
+
+		tmp = PINB & 0x08;
+                if (tmp == 0x08){
+	                count = count + 1;
+                }
+
+                tmp = PINB & 0x10;
+		if (tmp == 0x10){
                         count = count + 1;
                 }
-                if ((PINB & 0x20) == 0x20){                                                                                                                                                                                                                          count = count + 1;                                                                                                                                                                                                                   }
-                if ((PINB & 0x40) == 0x40){
+
+		tmp = PINB & 0x20;
+                if (tmp == 0x20){
                         count = count + 1;
                 }
-                if ((PINB & 0x80) == 0x80){                                                                                                                                                                                                                          count = count + 1;                                                                                                                                                                                                                   }
+
+                tmp = PINB & 0x40;
+		if (tmp == 0x40){
+                        count = count + 1;
+                }
+
+		tmp = PINB & 0x80;
+                if (tmp == 0x80){
+                        count = count + 1;                                                                                                                                                                                                                   }
                    
 	PORTC = count;
 
 	}
     /* Insert your solution below */
 
-    return 1;
+    return 0;
 }
