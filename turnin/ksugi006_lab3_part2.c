@@ -29,46 +29,35 @@ int main(void) {
 
    while (1) {
 
-	tmp2 = PINA & 0x01;
-	if(tmp2 == 0x01){
-		level = level  | 0x01;
-	}
+	tmp2 = PINA & 0x0F;
 
-	tmp2 = PINA & 0x02;
-        if(tmp2 == 0x02){
-                level = level  | 0x02;
-	}
-
-	tmp2 = PINA & 0x04;
-	if(tmp2 == 0x04){
-		level = level | 0x04;
-	}
-
-	tmp2 = PINA & 0x08;
-	if(tmp2 == 0x08) {
-		level = level | 0x08;
-	}
+	level = tmp2;
 
 	if (level == 0){
 		tmp = 0x00;
 		tmp = tmp | 0x40;
 	}
+	
 	else if (level <= 2){
 		tmp = 0x00;
 		tmp = tmp | 0x40;
 		tmp = tmp | 0x20;	
 	}
+	
 	else if (level <= 4){
 		tmp = 0x00;
 		tmp = tmp | 0x70;
 	}
-	else if (level <= 6){
+
+	else if(level <= 6){
 		tmp = 0x00;
 		tmp = tmp | 0x38;
 	}
+	
 	else if (level <= 9){
 		tmp = tmp | 0x3C;
 	}
+
 	else if (level <= 12){
 		tmp = 0x00;
 		tmp = tmp | 0x3E;
@@ -81,5 +70,6 @@ int main(void) {
 	PORTC = tmp;
 
     }
-    return 1;
+    return 0;
+
 }
