@@ -55,6 +55,7 @@ int main(void) {
 	}
 	
 	else if (level <= 9){
+		tmp = 0x00;
 		tmp = tmp | 0x3C;
 	}
 
