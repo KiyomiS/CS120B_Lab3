@@ -19,17 +19,26 @@ int main(void) {
 	DDRC = 0xFF; PORTC = 0x00;
 	unsigned char tmp = 0x00;
 	unsigned char tmp2 = 0x00;
+	unsigned char answer = 0x00;
+	unsigned char answer2 = 0x00;
     /* Insert your solution below */
     
 
    while (1) {
-    	tmp = PINA & 0x0F;
+ 	tmp = 0x00;
+	tmp2 = 0x00;
+	answer = 0x00;
+	answer2 = 0x00;
+
+	tmp = PINA & 0x0F;
 	tmp = tmp << 4;
-	PORTC = PORTC | tmp;
+	answer = answer | tmp;
+	PORTC = answer;
 
 	tmp2 = PINA & 0xF0;
 	tmp2  = tmp2 >> 4;
-	PORTB = PORTB | tmp2;
+	answer2 = answer2 | tmp2;
+	PORTB = answer2;
    }
-    return 1;
+    return 0;
 }

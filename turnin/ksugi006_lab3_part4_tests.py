@@ -31,5 +31,6 @@ tests = [ {'description': 'PINA: 0x0F => PINB: 0x00 PINC: 0xF0',
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
-#watch = ['<function>::<static-var>','PORTB']
+watch = ['main::tmp']
+#watch = ['main::tmp2']
 
